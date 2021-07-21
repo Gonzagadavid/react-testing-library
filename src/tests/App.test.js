@@ -4,7 +4,7 @@ import App from '../App';
 import renderWithRouter from './renderWithRouter';
 
 describe('testa renderização e funcionamento do componente App', () => {
-  test('verifica se aplicação possui os link de navegação com a url correta', () => {
+  it('verifica se aplicação possui os link de navegação com a url correta', () => {
     const { history } = renderWithRouter(<App />);
 
     const home = screen.getByRole('link', { name: 'Home' });
