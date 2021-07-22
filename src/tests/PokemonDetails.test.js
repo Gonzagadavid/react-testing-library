@@ -1,4 +1,4 @@
-import { fireEvent, screen, waitFor } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 import React from 'react';
 import App from '../App';
 import pokemons from '../data';
@@ -6,14 +6,13 @@ import renderWithRouter from './renderWithRouter';
 import * as pokedexService from '../services/pokedexService';
 
 const pokemon = pokemons[0];
-const { averageWeight, image, name, id, type, summary, foundAt } = pokemon;
-const { measurementUnit, value } = averageWeight;
+const { name, id, summary, foundAt } = pokemon;
 const mapQty = foundAt.length;
 const favorites = [];
 
 jest.mock('../services/pokedexService');
 
-pokedexService.updateFavoritePokemons.mockImplementation((idItem, bool) => {
+pokedexService.updateFavoritePokemons.mockImplementation((idItem) => {
   console.log('mockou');
   favorites.push(idItem);
 });
