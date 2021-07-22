@@ -9,7 +9,7 @@ describe('testa a renderização e o funcionamento do componente Pokemon', () =>
   afterEach(cleanup);
 
   const pokemon = pokemons[0];
-  const { averageWeight, image, name, id } = pokemon;
+  const { averageWeight, image, name, id, type } = pokemon;
   const { measurementUnit, value } = averageWeight;
 
   it('verifica se renderiza as informações corretas sobre um determinado pokemon', () => {
@@ -19,6 +19,9 @@ describe('testa a renderização e o funcionamento do componente Pokemon', () =>
 
     const pokemonName = screen.getByTestId('pokemon-name');
     expect(pokemonName).toHaveTextContent(name);
+
+    const pokemonType = screen.getByTestId('pokemon-type');
+    expect(pokemonType).toHaveTextContent(type);
 
     const pokemonWeight = screen.getByTestId('pokemon-weight');
     expect(pokemonWeight).toHaveTextContent(weightText);
