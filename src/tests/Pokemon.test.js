@@ -5,12 +5,12 @@ import pokemons from '../data';
 import renderWithRouter from './renderWithRouter';
 import App from '../App';
 
+const pokemon = pokemons[0];
+const { averageWeight, image, name, id, type } = pokemon;
+const { measurementUnit, value } = averageWeight;
+
 describe('testa a renderização e o funcionamento do componente Pokemon', () => {
   afterEach(cleanup);
-
-  const pokemon = pokemons[0];
-  const { averageWeight, image, name, id, type } = pokemon;
-  const { measurementUnit, value } = averageWeight;
 
   it('verifica se renderiza as informações corretas sobre um determinado pokemon', () => {
     renderWithRouter(<Pokemon pokemon={ pokemon } isFavorite />);
