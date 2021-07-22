@@ -78,11 +78,9 @@ describe('testa a renderização e o funcionamento do componente Pokedex', () =>
     checkAll(pokemonNames);
 
     fireEvent.click(btnPsy);
-
     checkAll(pokemonsPsy);
 
     fireEvent.click(btnAll);
-
     checkAll(pokemonNames);
   });
 });
