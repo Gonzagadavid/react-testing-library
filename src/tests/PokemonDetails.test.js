@@ -13,7 +13,6 @@ const favorites = [];
 jest.mock('../services/pokedexService');
 
 pokedexService.updateFavoritePokemons.mockImplementation((idItem) => {
-  console.log('mockou');
   favorites.push(idItem);
 });
 
